@@ -1,16 +1,16 @@
 '===============================================
-' ãƒ•ã‚¡ã‚¤ãƒ«å hide_spyware.vbs
-' Shift-JISã§ä¿å­˜ã™ã‚‹
+' ƒtƒ@ƒCƒ‹–¼ hide_spyware.vbs
+' Shift-JIS‚Å•Û‘¶‚·‚é
 '
-' ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚ºã®ã‚¹ãƒ‘ã‚¤ãƒ‘ãƒƒãƒã‚’éžè¡¨ç¤ºã«ã™ã‚‹
+' ƒEƒBƒ“ƒhƒEƒY‚ÌƒXƒpƒCƒpƒbƒ`‚ð”ñ•\Ž¦‚É‚·‚é
 ' Hidden Spy Patch Windows Update programs
 ' http://www.neko.ne.jp/~freewing/
 ' Copyright (c)2016 FREE WING, Y.Sakamoto
 '
-' ã‚¨ã‚¯ã‚¹ãƒ—ãƒ­ãƒ¼ãƒ©ãƒ¼ã‹ã‚‰
+' ƒGƒNƒXƒvƒ[ƒ‰[‚©‚ç
 ' hide_spyware.vbs
-' ã‚’å³ã‚¯ãƒªãƒƒã‚¯ã§ã€Œã‚³ãƒžãƒ³ãƒ‰ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã§é–‹ãã€ã‚’é¸æŠžã€
-' è¨±å¯ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ãŒå‡ºãŸã‚‰ã€Œã¯ã„ã€ã‚’æŠ¼ã—ã¦å®Ÿè¡Œã™ã‚‹ã€‚
+' ‚ð‰EƒNƒŠƒbƒN‚ÅuƒRƒ}ƒ“ƒhƒvƒƒ“ƒvƒg‚ÅŠJ‚­v‚ð‘I‘ðA
+' ‹–‰Âƒ_ƒCƒAƒƒO‚ªo‚½‚çu‚Í‚¢v‚ð‰Ÿ‚µ‚ÄŽÀs‚·‚éB
 '
 ' Base program Searching, Downloading, and Installing Updates
 ' https://msdn.microsoft.com/en-us/library/aa387102.aspx
@@ -34,29 +34,29 @@ If Not(UAC) Then
     Next
 End If
 
-' ä¸‹è¨˜ã®æ›´æ–°ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯éžè¡¨ç¤ºã«ã—ãªã„ã€‚
+' ‰º‹L‚ÌXVƒvƒƒOƒ‰ƒ€‚Í”ñ•\Ž¦‚É‚µ‚È‚¢B
 
-' ä¸‹è¨˜ã®æ›´æ–°ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’éžè¡¨ç¤ºã«ã™ã‚‹ã€‚
+' ‰º‹L‚ÌXVƒvƒƒOƒ‰ƒ€‚ð”ñ•\Ž¦‚É‚·‚éB
 spyListStr = "" _
-  & "2876229:Microsoft Update ç”¨ Skype" _
-  & ",2506928:Outlook ã§é–‹ã„ãŸ .html ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒªãƒ³ã‚¯ãŒæ©Ÿèƒ½ã—ãªã„" _
-  & ",2545698:ä¸€éƒ¨ã®ã‚³ã‚¢ ãƒ•ã‚©ãƒ³ãƒˆã®ãƒ†ã‚­ã‚¹ãƒˆãŒã¼ã‚„ã‘ã¦è¡¨ç¤ºã•ã‚Œã‚‹" _
+  & "2876229:Microsoft Update —p Skype" _
+  & ",2506928:Outlook ‚ÅŠJ‚¢‚½ .html ƒtƒ@ƒCƒ‹‚ÌƒŠƒ“ƒN‚ª‹@”\‚µ‚È‚¢" _
+  & ",2545698:ˆê•”‚ÌƒRƒA ƒtƒHƒ“ƒg‚ÌƒeƒLƒXƒg‚ª‚Ú‚â‚¯‚Ä•\Ž¦‚³‚ê‚é" _
   & ",2660075:the time zone is set to Samoa (UTC+13:00) and KB 2657025" _
-  & ",2726535:å›½ã®ãƒªã‚¹ãƒˆã«å—ã‚¹ãƒ¼ãƒ€ãƒ³ã‚’è¿½åŠ ã™ã‚‹" _
-  & ",2970228:ãƒ­ã‚·ã‚¢ ãƒ«ãƒ¼ãƒ–ãƒ«ã®æ–°ã—ã„é€šè²¨è¨˜å·ã‚’ã‚µãƒãƒ¼ãƒˆ" _
-  & ",2592687:ãƒªãƒ¢ãƒ¼ãƒˆ ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—é–¢ä¿‚ RDP 8.0ç”¨" _
-  & ",2923545:ãƒªãƒ¢ãƒ¼ãƒˆ ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—é–¢ä¿‚ RDP 8.1ç”¨" _
-  & ",2994023:ãƒªãƒ¢ãƒ¼ãƒˆ ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—é–¢ä¿‚ RDP 8.1ç”¨ä¿®æ­£" _
-  & ",2952664:Win10ã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰é–¢ä¿‚" _
-  & ",2990214:Win10ã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰é–¢ä¿‚" _
-  & ",3035583:Win10ã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰é–¢ä¿‚" _
-  & ",3123862:GWX 2016/02 Get Windows 10 Win10ã‚¢ãƒƒãƒ—ã‚°ãƒ¬ãƒ¼ãƒ‰é–¢ä¿‚" _
-  & ",3184143:Win10é–¢é€£é™¤åŽ»ãƒ‘ãƒƒãƒ" _
-  & ",3021917:CEIPï¼†ãƒ†ãƒ¬ãƒ¡ãƒˆãƒª(é éš”æƒ…å ±åŽé›†)é–¢é€£" _
-  & ",3022345:ãƒ†ãƒ¬ãƒ¡ãƒˆãƒªé–¢é€£" _
-  & ",3068708:ãƒ†ãƒ¬ãƒ¡ãƒˆãƒªé–¢é€£" _
-  & ",3075249:ãƒ†ãƒ¬ãƒ¡ãƒˆãƒªé–¢é€£" _
-  & ",3080149:ãƒ†ãƒ¬ãƒ¡ãƒˆãƒªé–¢é€£" _
+  & ",2726535:‘‚ÌƒŠƒXƒg‚É“ìƒX[ƒ_ƒ“‚ð’Ç‰Á‚·‚é" _
+  & ",2970228:ƒƒVƒA ƒ‹[ƒuƒ‹‚ÌV‚µ‚¢’Ê‰Ý‹L†‚ðƒTƒ|[ƒg" _
+  & ",2592687:ƒŠƒ‚[ƒg ƒfƒXƒNƒgƒbƒvŠÖŒW RDP 8.0—p" _
+  & ",2923545:ƒŠƒ‚[ƒg ƒfƒXƒNƒgƒbƒvŠÖŒW RDP 8.1—p" _
+  & ",2994023:ƒŠƒ‚[ƒg ƒfƒXƒNƒgƒbƒvŠÖŒW RDP 8.1—pC³" _
+  & ",2952664:Win10ƒAƒbƒvƒOƒŒ[ƒhŠÖŒW" _
+  & ",2990214:Win10ƒAƒbƒvƒOƒŒ[ƒhŠÖŒW" _
+  & ",3035583:Win10ƒAƒbƒvƒOƒŒ[ƒhŠÖŒW" _
+  & ",3123862:GWX 2016/02 Get Windows 10 Win10ƒAƒbƒvƒOƒŒ[ƒhŠÖŒW" _
+  & ",3184143:Win10ŠÖ˜Aœ‹Žƒpƒbƒ`" _
+  & ",3021917:CEIP•ƒeƒŒƒƒgƒŠ(‰“Šuî•ñŽûW)ŠÖ˜A" _
+  & ",3022345:ƒeƒŒƒƒgƒŠŠÖ˜A" _
+  & ",3068708:ƒeƒŒƒƒgƒŠŠÖ˜A" _
+  & ",3075249:ƒeƒŒƒƒgƒŠŠÖ˜A" _
+  & ",3080149:ƒeƒŒƒƒgƒŠŠÖ˜A" _
   & ",3050265:WUC 2015/06 Windows Update Client" _
   & ",3065987:WUC 2015/07 Windows Update Client" _
   & ",3075851:WUC 2015/08 Windows Update Client" _
@@ -65,10 +65,10 @@ spyListStr = "" _
   & ",3102810:WUC 2015/11 Windows Update Client 7.6.7601.19046" _
   & ",3112343:WUC 2015/12 Windows Update Client 7.6.7601.19077" _
   & ",3135445:WUC 2016/02 Windows Update Client 7.6.7601.19116" _
-  & ",2977759:Windows 7 ã® rtmç‰ˆ Windows CEIP ã‚«ã‚¹ã‚¿ãƒžãƒ¼ã‚¨ã‚¯ã‚¹ãƒšãƒªã‚¨ãƒ³ã‚¹å‘ä¸Šãƒ—ãƒ­ã‚°ãƒ©ãƒ " _
+  & ",2977759:Windows 7 ‚Ì rtm”Å Windows CEIP ƒJƒXƒ^ƒ}[ƒGƒNƒXƒyƒŠƒGƒ“ƒXŒüãƒvƒƒOƒ‰ƒ€" _
   & ",3008273:Windows 8 to 8.1 Update" _
-  & ",3065988:Windows 8.1 Windows Server 2012 R2 ç”¨ Windows Update ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆ" _
-  & ",2976978:Windows 8.1 Windows CEIP ã‚«ã‚¹ã‚¿ãƒžãƒ¼ ã‚¨ã‚¯ã‚¹ãƒšãƒªã‚¨ãƒ³ã‚¹å‘ä¸Šãƒ—ãƒ­ã‚°ãƒ©ãƒ " _
+  & ",3065988:Windows 8.1 Windows Server 2012 R2 —p Windows Update ƒNƒ‰ƒCƒAƒ“ƒg" _
+  & ",2976978:Windows 8.1 Windows CEIP ƒJƒXƒ^ƒ}[ ƒGƒNƒXƒyƒŠƒGƒ“ƒXŒüãƒvƒƒOƒ‰ƒ€" _
   & ",3044374:Windows 8.1 to Windows 10 Update that enables you to upgrade"
 
 spySplit = Split(spyListStr, ",")
@@ -77,7 +77,7 @@ Set objShell = WScript.CreateObject("WScript.Shell")
 
 For J = 0 To UBound(spySplit)
     spyDatas = Split(spySplit(J), ":")
-    ' ã‚¢ãƒ³ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã™ã‚‹
+    ' ƒAƒ“ƒCƒ“ƒXƒg[ƒ‹‚·‚é
     cmdStr = "wusa.exe /uninstall /kb:" & spyDatas(0) & " /quiet /norestart"
     WScript.Echo " Uninstall > KB" & spyDatas(0) & " " & cmdStr
     objShell.Run cmdStr,,True
@@ -104,7 +104,7 @@ For I = 0 To searchResult.Updates.Count-1
     For J = 0 To UBound(spySplit)
         spyDatas = Split(spySplit(J), ":")
         If InStr(update.Title, spyDatas(0)) > 0 Then
-            ' æ›´æ–°ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã‚’éžè¡¨ç¤ºã«ã™ã‚‹
+            ' XVƒvƒƒOƒ‰ƒ€‚ð”ñ•\Ž¦‚É‚·‚é
             update.IsHidden = true
             WScript.Echo " IsHidden > " & update.Title
         End If
