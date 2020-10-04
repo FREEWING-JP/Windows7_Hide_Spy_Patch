@@ -12,13 +12,17 @@ Hidden Spy Patch Windows Update programs
 hide_spyware.vbs
 を右クリックで「コマンドプロンプトで開く」を選択、
 許可ダイアログが出たら「はい」を押して実行する。
-English:-
- An app that easily hides Windows 7 spy patch updates
 
-Hide Windows spy patches
-Hidden Spy Patch Windows Update programs
+---
+### Hidden Spy Patch Windows 7 Update programs
 
-From explorer
-hide_spyware.vbs
-Right-click and select "Open at Command Prompt",
-When the permission dialog appears, press "Yes" to execute.
+English:-  
+ An app that easily hides Windows 7 spy patch updates  
+  
+Hide Windows spy patches  
+Hidden Spy Patch Windows Update programs  
+  
+From explorer  
+hide_spyware.vbs  
+Right-click and select "Open at Command Prompt",  
+When the permission dialog appears, press "Yes" to execute.  
